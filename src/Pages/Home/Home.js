@@ -5,7 +5,7 @@ import Parts from "./Parts";
 
 const Home = () => {
   return (
-    <div>
+    <div className="justify-center">
       <Banner></Banner>
       <Parts></Parts>
       <Cards></Cards>

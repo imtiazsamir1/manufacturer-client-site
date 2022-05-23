@@ -1,0 +1,56 @@
+[
+    {
+     "name":"Cog",
+     "img" :" https://media.istockphoto.com/photos/odd-cog-picture-id175405676?s=612x612" ,
+     " description":"A wheel or bar with a series of projections on its edge, which transfers motion by engaging with projections on another wheel or bar.",
+     " minimum order quantity":"10",
+     "available quantity":"100",
+     " price":"500"
+
+    },
+    {
+     "name":"Aborber",
+     "img" :"https://media.istockphoto.com/photos/shock-absorber-car-picture-id526840919?s=612x612 " ,
+     " description":" Shock absorbers are an integral part of a vehicle's suspension. A shock absorber is designed to absorb or dampen the compression and rebound of the springs and suspension. They control the unwanted and excess spring motion. Shock absorbers keep your tires in contact with the road at all times.",
+     " minimum order quantity":"15",
+     "available quantity":"90",
+     " price":"400"
+
+    },
+    {
+     "name":"Engine",
+     "img" :"https://media.istockphoto.com/photos/motorcycle-engine-picture-id137512266?s=612x612 " ,
+     "description":"Motorcycle engines are typically two-stroke or four-stroke internal combustion engines, but other engine types, such as Wankels and electric motors, have been used.",
+     "minimum order quantity":"5",
+     "available quantity":"150",
+     "price":"1000"
+
+    },
+    {
+     "name":"Gears",
+     "img" :" https://media.istockphoto.com/photos/motorcycle-clutch-with-gears-picture-id521976870?s=612x612" ,
+     "description":"",
+     "minimum order quantity":"20",
+     "available quantity":"200",
+     "price":"100"
+
+    },
+    {
+     "name":"Air Cooled",
+     "img" :"https://media.istockphoto.com/photos/motorcycle-aircooled-cylinder-picture-id621357266?s=612x612 " ,
+     "description":"Air-cooled engines remove engine heat by using the air that hits the engine when the bike is moving. This is why they have fins on the outside to create more surface area for the air to pass over. This cooling method is very simple, lightweight and requires no special devices.",
+     "minimum order quantity":"8",
+     "available quantity":"150",
+     "price":"550"
+
+    },
+    {
+     "name":"Chain",
+     "img" :"https://media.istockphoto.com/photos/motorcycle-maintenance-lubricating-chain-closeup-picture-id1190331037?s=612x612 " ,
+     "description":"All bicycle chains are not the same size. Size varies on the bike's numbers of sprockets, speeds, the distance between the front chainring and rear cogs, and the number of teeth on them.",
+     "minimum order quantity":"30",
+     "available quantity":"500",
+     "price":"99"
+
+    }
+]

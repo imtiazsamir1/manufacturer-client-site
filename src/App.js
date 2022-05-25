@@ -7,6 +7,9 @@ import NavBer from "./Pages/Sheared/NavBer";
 import Footer from "./Pages/Sheared/Footer";
 import Login from "./Pages/Sheared/Login/Login";
 import SignUp from "./Pages/Sheared/Login/SignUp";
+import MyOrders from "./Pages/MyOrders/MyOrders";
+import RequireAuth from "./Pages/Sheared/Login/RequireAuth";
+import PartsDetail from "./Pages/PartsDetail/PartsDetail";
 
 function App() {
   return (
@@ -14,6 +17,18 @@ function App() {
       <NavBer></NavBer>
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
+        <Route
+          path="/part/:partId"
+          element={<PartsDetail></PartsDetail>}
+        ></Route>
+        <Route
+          path="/myorders"
+          element={
+            <RequireAuth>
+              <MyOrders></MyOrders>
+            </RequireAuth>
+          }
+        ></Route>
         <Route path="/signup" element={<SignUp></SignUp>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
       </Routes>

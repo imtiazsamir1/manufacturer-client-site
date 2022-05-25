@@ -13,18 +13,7 @@ const AvailableParts = () => {
       <h1>{parts.length}</h1>
       <div>
         {parts.map((part) => (
-          //
-          <div>
-            <h1>{part.name}</h1>
-            <img src={part.img} alt="" />
-            <h1>{part.description}</h1>
-            <h3>{part.minOrder}</h3>
-            <h3>{part.availableQuantity}</h3>
-            <h1>{part.price}</h1>
-            <button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg">
-              Buy Now
-            </button>
-          </div>
+          <Part key={part._id} part={part}></Part>
         ))}
       </div>
     </div>

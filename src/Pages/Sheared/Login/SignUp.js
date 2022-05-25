@@ -144,7 +144,7 @@ const SignUp = () => {
               </label>
             </div>
 
-            {/* {signInError} */}
+            {signInError}
             <input
               className="btn w-full max-w-xs text-white"
               type="submit"
@@ -161,7 +161,7 @@ const SignUp = () => {
           </p>
           <div className="divider">OR</div>
           <button
-            // onClick={() => signInWithGoogle()}
+            onClick={() => signInWithGoogle()}
             className="btn btn-outline"
           >
             Continue with Google

@@ -10,6 +10,10 @@ import SignUp from "./Pages/Sheared/Login/SignUp";
 import MyOrders from "./Pages/MyOrders/MyOrders";
 import RequireAuth from "./Pages/Sheared/Login/RequireAuth";
 import PartsDetail from "./Pages/PartsDetail/PartsDetail";
+import Dashboard from "./Pages/Dashboard/Dashboard";
+import MyProfile from "./Pages/Dashboard/MyProfile";
+import MyOrder from "./Pages/Dashboard/MyOrder";
+import AddReview from "./Pages/Dashboard/AddReview";
 
 function App() {
   return (
@@ -21,6 +25,18 @@ function App() {
           path="/part/:partId"
           element={<PartsDetail></PartsDetail>}
         ></Route>
+        <Route
+          path="dashboard"
+          element={
+            <RequireAuth>
+              <Dashboard />
+            </RequireAuth>
+          }
+        >
+          <Route index element={<MyProfile></MyProfile>}></Route>
+          <Route path="addreview" element={<AddReview></AddReview>}></Route>
+          <Route path="myorder" element={<MyOrder></MyOrder>}></Route>
+        </Route>
         <Route
           path="/myorders"
           element={

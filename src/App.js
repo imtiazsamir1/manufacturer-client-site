@@ -19,6 +19,9 @@ import Blogs from "./Pages/Blogs/Blogs";
 import ManageProducts from "./Pages/ManageProducts/ManageProducts";
 import NotFound from "./Pages/ManageProducts/NotFound/NotFound";
 import AddProduct from "./Pages/Dashboard/AddProduct/AddProduct";
+import ChackOut from "./Pages/ChackOut/ChackOut";
+import MyPortfolio from "./Pages/ChackOut/Protfolio/MyProtfolio";
+import ManageAllOrder from "./Pages/ManageAllOrder/ManageAllOrder";
 
 function App() {
   return (
@@ -30,7 +33,7 @@ function App() {
         <Route path="/purchase" element={<Purchase></Purchase>}></Route>
 
         <Route
-          path="/purchase/:partId"
+          path="/purchase/:id"
           element={<PartsDetail></PartsDetail>}
         ></Route>
         <Route
@@ -43,22 +46,24 @@ function App() {
         >
           <Route index element={<MyProfile></MyProfile>}></Route>
           <Route path="addreview" element={<AddReview></AddReview>}></Route>
+          <Route path="protfolio" element={<MyPortfolio></MyPortfolio>}></Route>
+          <Route path="addproduct" element={<AddProduct></AddProduct>}></Route>
+          <Route path="myorders" element={<MyOrders></MyOrders>}></Route>
+          <Route
+            path="manageall"
+            element={<ManageAllOrder></ManageAllOrder>}
+          ></Route>
+
           <Route
             path="manageproducts"
             element={<ManageProducts></ManageProducts>}
           ></Route>
-          <Route path="myorder" element={<MyOrder></MyOrder>}></Route>
         </Route>
-        <Route
-          path="/myorders"
-          element={
-            <RequireAuth>
-              <MyOrders></MyOrders>
-            </RequireAuth>
-          }
-        ></Route>
-        <Route path="/addproduct" element={<AddProduct></AddProduct>}></Route>
+
+        <Route path="/chackout" element={<ChackOut></ChackOut>}></Route>
+
         <Route path="/*" element={<NotFound></NotFound>}></Route>
+        <Route path="/order" element={<MyOrder></MyOrder>}></Route>
         <Route path="/signup" element={<SignUp></SignUp>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
       </Routes>

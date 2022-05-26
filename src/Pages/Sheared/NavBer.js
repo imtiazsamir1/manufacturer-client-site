@@ -16,7 +16,7 @@ const NavBer = () => {
         <Link to="/">Home</Link>
       </li>
       <li>
-        <Link to="/purchase">Purchase</Link>
+        <Link to="/blogs">Blogs</Link>
       </li>
       {user && (
         <li>
@@ -68,28 +68,29 @@ const NavBer = () => {
         <div class="navbar-center hidden lg:flex">
           <ul class="menu menu-horizontal p-0">{menuItems}</ul>
         </div>
-      </div>
-      <div className="navbar-end">
-        <label
-          tabIndex="1"
-          for="dashboard-sidebar"
-          className="btn btn-ghost lg:hidden"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-5 w-5"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
+
+        <div className="navbar-end">
+          <label
+            tabIndex="1"
+            for="dashboard-sidebar"
+            className="btn btn-ghost lg:hidden"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M4 6h16M4 12h8m-8 6h16"
-            />
-          </svg>
-        </label>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h8m-8 6h16"
+              />
+            </svg>
+          </label>
+        </div>
       </div>
     </div>
   );

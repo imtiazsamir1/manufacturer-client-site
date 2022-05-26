@@ -14,6 +14,10 @@ import Dashboard from "./Pages/Dashboard/Dashboard";
 import MyProfile from "./Pages/Dashboard/MyProfile";
 import MyOrder from "./Pages/Dashboard/MyOrder";
 import AddReview from "./Pages/Dashboard/AddReview";
+import Purchase from "./Pages/Purchase/Purchase";
+import Blogs from "./Pages/Blogs/Blogs";
+import ManageProducts from "./Pages/ManageProducts/ManageProducts";
+import NotFound from "./Pages/ManageProducts/NotFound/NotFound";
 
 function App() {
   return (
@@ -21,8 +25,11 @@ function App() {
       <NavBer></NavBer>
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
+        <Route path="/blogs" element={<Blogs></Blogs>}></Route>
+        <Route path="/purchase" element={<Purchase></Purchase>}></Route>
+
         <Route
-          path="/part/:partId"
+          path="/purchase/:partId"
           element={<PartsDetail></PartsDetail>}
         ></Route>
         <Route
@@ -35,6 +42,10 @@ function App() {
         >
           <Route index element={<MyProfile></MyProfile>}></Route>
           <Route path="addreview" element={<AddReview></AddReview>}></Route>
+          <Route
+            path="manageproducts"
+            element={<ManageProducts></ManageProducts>}
+          ></Route>
           <Route path="myorder" element={<MyOrder></MyOrder>}></Route>
         </Route>
         <Route
@@ -45,6 +56,7 @@ function App() {
             </RequireAuth>
           }
         ></Route>
+        <Route path="/*" element={<NotFound></NotFound>}></Route>
         <Route path="/signup" element={<SignUp></SignUp>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
       </Routes>

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Purchase from "../Purchase/Purchase";
 import Part from "./Part";
 
 const AvailableParts = () => {
@@ -12,8 +13,8 @@ const AvailableParts = () => {
     <div>
       <h1>{parts.length}</h1>
       <div>
-        {parts.map((part) => (
-          <Part key={part._id} part={part}></Part>
+        {parts.map((purchase) => (
+          <Purchase key={purchase._id} purchase={purchase}></Purchase>
         ))}
       </div>
     </div>

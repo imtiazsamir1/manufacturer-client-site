@@ -18,6 +18,7 @@ import Purchase from "./Pages/Purchase/Purchase";
 import Blogs from "./Pages/Blogs/Blogs";
 import ManageProducts from "./Pages/ManageProducts/ManageProducts";
 import NotFound from "./Pages/ManageProducts/NotFound/NotFound";
+import AddProduct from "./Pages/Dashboard/AddProduct/AddProduct";
 
 function App() {
   return (
@@ -56,6 +57,7 @@ function App() {
             </RequireAuth>
           }
         ></Route>
+        <Route path="/addproduct" element={<AddProduct></AddProduct>}></Route>
         <Route path="/*" element={<NotFound></NotFound>}></Route>
         <Route path="/signup" element={<SignUp></SignUp>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>

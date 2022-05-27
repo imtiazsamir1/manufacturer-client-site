@@ -1,4 +1,5 @@
 import React from "react";
+import Review from "../Review/Review";
 import AvailableParts from "./AvailableParts";
 
 import Banner from "./Banner";
@@ -10,9 +11,10 @@ const Home = () => {
   return (
     <div className="justify-center">
       <Banner></Banner>
-      <Parts></Parts>
-      <Cards></Cards>
+      {/* <Parts></Parts> */}
+      {/* <Cards></Cards> */}
       <AvailableParts></AvailableParts>
+      <Review></Review>
     </div>
   );
 };

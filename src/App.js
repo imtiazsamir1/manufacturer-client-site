@@ -25,6 +25,8 @@ import ManageAllOrder from "./Pages/ManageAllOrder/ManageAllOrder";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import User from "./Pages/User/User";
+import Banner from "./Pages/Home/Banner";
+import Review from "./Pages/Review/Review";
 const stripePromise = loadStripe(
   "pk_test_51L0j5UHw1ppVQWndFtGKSCw5rDU15PD6vBHX3o3Oi9OAtC6BF1Xak8n06YD4S8LxEl78IpklBsg7ZGrfku1vAymo00XYkGq7Yt"
 );
@@ -33,9 +35,15 @@ function App() {
   return (
     <div>
       <NavBer></NavBer>
+
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
-        <Route path="/blogs" element={<Blogs></Blogs>}></Route>
+
+        <Route
+          className="max-w-7xl mx-auto px-12"
+          path="/blogs"
+          element={<Blogs></Blogs>}
+        ></Route>
         <Route path="/purchase" element={<Purchase></Purchase>}></Route>
 
         <Route
@@ -50,12 +58,12 @@ function App() {
             </RequireAuth>
           }
         >
-          <Route index element={<MyProfile></MyProfile>}></Route>
+          <Route index element={<User></User>}></Route>
           <Route path="addreview" element={<AddReview></AddReview>}></Route>
           <Route path="protfolio" element={<MyPortfolio></MyPortfolio>}></Route>
           <Route path="addproduct" element={<AddProduct></AddProduct>}></Route>
           <Route path="myorders" element={<MyOrders></MyOrders>}></Route>
-          {/* <Route path="user" element={<User></User>}></Route> */}
+          <Route path="user" element={<User></User>}></Route>
           <Route
             path="manageall"
             element={<ManageAllOrder></ManageAllOrder>}
@@ -79,6 +87,7 @@ function App() {
         ></Route>
 
         <Route path="/*" element={<NotFound></NotFound>}></Route>
+        <Route path="/review" element={<Review></Review>}></Route>
         <Route path="/order" element={<MyOrder></MyOrder>}></Route>
         <Route path="/signup" element={<SignUp></SignUp>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>

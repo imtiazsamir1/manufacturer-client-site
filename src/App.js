@@ -22,6 +22,12 @@ import AddProduct from "./Pages/Dashboard/AddProduct/AddProduct";
 import ChackOut from "./Pages/ChackOut/ChackOut";
 import MyPortfolio from "./Pages/ChackOut/Protfolio/MyProtfolio";
 import ManageAllOrder from "./Pages/ManageAllOrder/ManageAllOrder";
+import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
+import User from "./Pages/User/User";
+const stripePromise = loadStripe(
+  "pk_test_51L0j5UHw1ppVQWndFtGKSCw5rDU15PD6vBHX3o3Oi9OAtC6BF1Xak8n06YD4S8LxEl78IpklBsg7ZGrfku1vAymo00XYkGq7Yt"
+);
 
 function App() {
   return (
@@ -49,6 +55,7 @@ function App() {
           <Route path="protfolio" element={<MyPortfolio></MyPortfolio>}></Route>
           <Route path="addproduct" element={<AddProduct></AddProduct>}></Route>
           <Route path="myorders" element={<MyOrders></MyOrders>}></Route>
+          {/* <Route path="user" element={<User></User>}></Route> */}
           <Route
             path="manageall"
             element={<ManageAllOrder></ManageAllOrder>}
@@ -60,7 +67,16 @@ function App() {
           ></Route>
         </Route>
 
-        <Route path="/chackout" element={<ChackOut></ChackOut>}></Route>
+        <Route
+          path="checkout/:paymentID"
+          element={
+            <RequireAuth>
+              <Elements stripe={stripePromise}>
+                <ChackOut />
+              </Elements>
+            </RequireAuth>
+          }
+        ></Route>
 
         <Route path="/*" element={<NotFound></NotFound>}></Route>
         <Route path="/order" element={<MyOrder></MyOrder>}></Route>

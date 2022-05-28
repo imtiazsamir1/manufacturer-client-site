@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-bangle bike parts [Live Link](https://bike-parts-5e55f.web.app/).
+bangle bike parts (client) [Live Link](https://bike-parts-5e55f.web.app/).
 
 ## Available Scripts
 

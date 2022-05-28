@@ -19,7 +19,7 @@ const PurchaseSinglePage = () => {
     isLoading,
     refetch,
   } = useQuery(("parts", id), () =>
-    axios.get(`https://young-stream-79821.herokuapp.com/parts/${id}`)
+    axios.get(` https://young-stream-79821.herokuapp.com/parts/${id}`)
   );
   const products = product?.data;
   useEffect(() => {
@@ -59,7 +59,7 @@ const PurchaseSinglePage = () => {
       name: product.data.name,
     };
     axios
-      .post("https://young-stream-79821.herokuapp.com/order", order)
+      .post(" https://young-stream-79821.herokuapp.com/order", order)
       .then((response) => {
         console.log(response.data);
       });
@@ -70,7 +70,7 @@ const PurchaseSinglePage = () => {
     };
 
     axios
-      .put(`https://young-stream-79821.herokuapp.com/parts/${id}`, doc)
+      .put(` https://young-stream-79821.herokuapp.com/parts/${id}`, doc)
       .then((response) => {
         refetch();
       });

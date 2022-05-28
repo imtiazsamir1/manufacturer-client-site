@@ -17,7 +17,7 @@ const MyOrders = () => {
     isLoading,
     refetch,
   } = useQuery("order", () =>
-    axios.get(` https://young-stream-79821.herokuapp.com/order?email=${email}`)
+    axios.get(`  https://young-stream-79821.herokuapp.com/order?email=${email}`)
   );
 
   if (isLoading) {
@@ -25,7 +25,7 @@ const MyOrders = () => {
   }
   const handleDelete = (id) => {
     axios
-      .delete(` https://young-stream-79821.herokuapp.com/order/${id}`)
+      .delete(`  https://young-stream-79821.herokuapp.com/order/${id}`)
       .then((response) => refetch());
   };
   const handlePayment = (id) => {

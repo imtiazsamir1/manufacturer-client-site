@@ -9,12 +9,14 @@ const DeleteConfirmModal = ({
   orderDeleteRefetch,
 }) => {
   const handleDeleteProduct = async (id) => {
-    await axios.delete(` https://young-stream-79821.herokuapp.com/part/${id}`);
+    await axios.delete(`  https://young-stream-79821.herokuapp.com/part/${id}`);
     refetch();
     toast.success("Item deleted");
   };
   const handleDeleteOrder = async (id) => {
-    await axios.delete(` https://young-stream-79821.herokuapp.com/order/${id}`);
+    await axios.delete(
+      `  https://young-stream-79821.herokuapp.com/order/${id}`
+    );
     orderDeleteRefetch();
     toast.success("Item deleted");
   };

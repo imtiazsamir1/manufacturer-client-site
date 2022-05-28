@@ -9,7 +9,7 @@ const useAdmin = (user) => {
     // console.log(email);
     if (email) {
       axios
-        .get(` https://young-stream-79821.herokuapp.com/admin/${email}`)
+        .get(`  https://young-stream-79821.herokuapp.com/admin/${email}`)
         .then((response) => {
           setAdmin(response.data);
           setAdminLoading(false);

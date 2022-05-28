@@ -13,7 +13,7 @@ const User = () => {
   } = useQuery(
     "all-user",
     async () =>
-      await axios.get(" https://young-stream-79821.herokuapp.com/all-user")
+      await axios.get("  https://young-stream-79821.herokuapp.com/all-user")
   );
 
   if (isLoading) {
@@ -21,7 +21,7 @@ const User = () => {
   }
   const makeAdmin = async (email, name) => {
     await axios
-      .put(` https://young-stream-79821.herokuapp.com/user/admin/${email}`)
+      .put(`  https://young-stream-79821.herokuapp.com/user/admin/${email}`)
       .then((response) => console.log(response));
     refetch();
     toast.success(` you approved ${name || email} as admin.`);
@@ -29,7 +29,7 @@ const User = () => {
   const users = user.data;
 
   const handleDeleteUser = async (id) => {
-    await axios.delete(` https://young-stream-79821.herokuapp.com/user/${id}`);
+    await axios.delete(`  https://young-stream-79821.herokuapp.com/user/${id}`);
     refetch();
     toast.success(`User Deleted`);
   };

@@ -10,7 +10,7 @@ const useToken = (user) => {
     if (email) {
       axios
         .put(
-          ` https://young-stream-79821.herokuapp.com/user/${email}`,
+          `  https://young-stream-79821.herokuapp.com/user/${email}`,
           currentUser
         )
         .then((response) => {

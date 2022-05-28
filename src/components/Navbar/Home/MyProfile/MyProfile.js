@@ -18,7 +18,7 @@ const MyProfile = () => {
     refetch,
   } = useQuery("user", () =>
     axios.get(
-      ` https://young-stream-79821.herokuapp.com/user?email=${user?.email}`,
+      `  https://young-stream-79821.herokuapp.com/user?email=${user?.email}`,
       {
         headers: {
           authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -41,7 +41,7 @@ const MyProfile = () => {
 
     await updateProfile({ displayName: name });
     await axios.put(
-      ` https://young-stream-79821.herokuapp.com/user-update?email=${user?.email}`,
+      `  https://young-stream-79821.herokuapp.com/user-update?email=${user?.email}`,
       { name, address, phone, linkedin, email: user.email },
       {
         headers: {

@@ -19,7 +19,7 @@ const PurchaseSinglePage = () => {
     isLoading,
     refetch,
   } = useQuery(("parts", id), () =>
-    axios.get(`http://localhost:5000/parts/${id}`)
+    axios.get(`https://young-stream-79821.herokuapp.com/parts/${id}`)
   );
   const products = product?.data;
   useEffect(() => {
@@ -58,18 +58,22 @@ const PurchaseSinglePage = () => {
       price: price,
       name: product.data.name,
     };
-    axios.post("http://localhost:5000/order", order).then((response) => {
-      console.log(response.data);
-    });
+    axios
+      .post("https://young-stream-79821.herokuapp.com/order", order)
+      .then((response) => {
+        console.log(response.data);
+      });
     let newAvailableQuantity =
       parseInt(product?.data.available) - orderQuantity;
     const doc = {
       available: newAvailableQuantity,
     };
 
-    axios.put(`http://localhost:5000/parts/${id}`, doc).then((response) => {
-      refetch();
-    });
+    axios
+      .put(`https://young-stream-79821.herokuapp.com/parts/${id}`, doc)
+      .then((response) => {
+        refetch();
+      });
     toast.success(`Order Successful`);
   };
   return (

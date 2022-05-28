@@ -8,7 +8,7 @@ import DeleteConfirmModal from "../DeleteConfirmModal/DeleteConfirmModal";
 const ManageProducts = () => {
   const [product, setProduct] = useState(null);
   const { data, isLoading, refetch } = useQuery("parts", () =>
-    axios.get("http://localhost:5000/parts")
+    axios.get("https://young-stream-79821.herokuapp.com/parts")
   );
   if (isLoading) {
     return <Loading></Loading>;

@@ -17,14 +17,14 @@ const MyOrders = () => {
     isLoading,
     refetch,
   } = useQuery("order", () =>
-    axios.get(`http://localhost:5000/order?email=${email}`)
+    axios.get(`https://young-stream-79821.herokuapp.com/order?email=${email}`)
   );
   if (isLoading) {
     return <Loading></Loading>;
   }
   const handleDelete = (id) => {
     axios
-      .delete(`http://localhost:5000/order/${id}`)
+      .delete(`https://young-stream-79821.herokuapp.com/order/${id}`)
       .then((response) => refetch());
   };
   const handlePayment = (id) => {

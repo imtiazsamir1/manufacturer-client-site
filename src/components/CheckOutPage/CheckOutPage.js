@@ -10,7 +10,7 @@ const CheckOutPage = () => {
   const [error, SetError] = useState("");
   const { paymentID } = useParams();
   const { data, isLoading } = useQuery(["order", paymentID], () =>
-    axios.get(`http://localhost:5000/order/${paymentID}`)
+    axios.get(`https://young-stream-79821.herokuapp.com/order/${paymentID}`)
   );
   const [clientSecret, setClientSecret] = useState("");
   const [success, setSuccess] = useState("");
@@ -22,7 +22,9 @@ const CheckOutPage = () => {
   const email = data?.data.email;
   useEffect(() => {
     axios
-      .post(`http://localhost:5000/create-payment-intent`, { price })
+      .post(`https://young-stream-79821.herokuapp.com/create-payment-intent`, {
+        price,
+      })
       .then((response) => setClientSecret(response.data.clientSecret));
   }, [price]);
   if (isLoading) {
@@ -60,7 +62,7 @@ const CheckOutPage = () => {
         }
         if (result.paymentIntent) {
           setPaymentId(result.paymentIntent.id);
-          axios.post("http://localhost:5000/payment", {
+          axios.post("https://young-stream-79821.herokuapp.com/payment", {
             paymentId: paymentId,
             price: price,
             quantity: data?.data.quantity,
@@ -68,10 +70,10 @@ const CheckOutPage = () => {
             name: data?.data.name,
           });
 
-          axios.put(`http://localhost:5000/order/${paymentID}`, {
-            payment: true,
-            paymentId: result.paymentIntent.id,
-          });
+          axios.put(
+            `https://young-stream-79821.herokuapp.com/order/${paymentID}`,
+            { payment: true, paymentId: result.paymentIntent.id }
+          );
         }
       });
     if (error) {

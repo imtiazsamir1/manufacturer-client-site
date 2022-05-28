@@ -12,7 +12,7 @@ const AddProduct = () => {
     const price = e.target.price.value;
     const img = e.target.img.value;
     axios
-      .post("http://localhost:5000/parts", {
+      .post("https://young-stream-79821.herokuapp.com/parts", {
         name,
         des,
         minimunOrder,

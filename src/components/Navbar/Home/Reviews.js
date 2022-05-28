@@ -6,7 +6,7 @@ const Reviews = () => {
   const [reviews, setReviews] = useState([]);
   useEffect(() => {
     axios
-      .get("http://localhost:5000/review", {
+      .get("https://young-stream-79821.herokuapp.com/review", {
         headers: {
           authorization: `Bearer ${localStorage.getItem("accessToken")}`,
         },

@@ -9,7 +9,7 @@ import DeleteConfirmModal from "../DeleteConfirmModal/DeleteConfirmModal";
 const ManageAllOrders = () => {
   const [ordersForModal, setOrdersForModal] = useState(null);
   const { data, isLoading, refetch } = useQuery("orders", () =>
-    axios.get("http://localhost:5000/orders")
+    axios.get("https://young-stream-79821.herokuapp.com/orders")
   );
   if (isLoading) {
     return <Loading></Loading>;
@@ -19,7 +19,9 @@ const ManageAllOrders = () => {
   const handleShipped = async (id, status) => {
     if (!status) {
       await axios
-        .put(`http://localhost:5000/orders/${id}`, { status: "shipped" })
+        .put(`https://young-stream-79821.herokuapp.com/orders/${id}`, {
+          status: "shipped",
+        })
         .then((response) => console.log(response.data));
       refetch();
       toast.success("items shipped");

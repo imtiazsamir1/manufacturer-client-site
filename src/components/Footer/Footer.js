@@ -41,7 +41,7 @@ const Footer = () => {
           {/* heello */}
           <p>
             Bangle Bike Parts Ltd. <br />
-            Providing reliable tech since 2020
+            Providing reliable tech since 2022
           </p>
         </div>
         <div className="md:place-self-center md:justify-self-end">
